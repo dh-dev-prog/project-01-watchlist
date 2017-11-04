@@ -1,0 +1,60 @@
+<!DOCTYPE>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale=1">
+    <title>watchall</title>
+  </head>
+  <body>
+
+    <header>
+      <h1>Watchall</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Your Watchlist</a></li>
+          <li><a href="#">Movies</a></li>
+        </ul>
+      </nav>
+      <input type="text" placeholder="search...">
+    </header>
+
+    <main ng-controller="mainController">
+
+      <section>
+        <h2>New Releases</h2>
+        <ul class="movie-list">
+
+          <li class="movie-list-item" ng-repeat="movie in list">
+            <img class="movie-list-image" ng-src={{movie.img}} alt="{{movie.name}} poster">
+            <div class="movie-list-info">
+              <h4 class="movie-list-title">{{movie.name}}</h4>
+              <p>release date</p>
+            </div>
+            <button class="movie-list-add" type="button">Add</button>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>This Year</h2>
+        <ul class="movie-list">
+
+          <li class="movie-list-item" ng-repeat="movie in list">
+            <img class="movie-list-image" ng-src={{movie.img}} alt="{{movie.name}} poster">
+            <div class="movie-list-info">
+              <h4 class="movie-list-title">{{movie.name}}</h4>
+              <p>release date</p>
+            </div>
+            <button class="movie-list-add" type="button">Add</button>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>Footer</p>
+    </footer>
+
+  </body>
+</html>

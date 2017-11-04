@@ -1,0 +1,62 @@
+@import "partials/colors";
+@import "partials/fonts";
+
+// Base
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background-color: $columbia-blue;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Layout
+
+
+// Modules
+
+header {
+  padding: 10px;
+  background-color: $mikado-yellow;
+}
+
+// Movie-list
+
+main {
+  padding: 10px;
+}
+.movie-list {
+  display: grid;
+  grid-auto-rows: 130px;
+  grid-gap: 10px;
+}
+.movie-list-item {
+  background: silver;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  padding: 5px;
+  align-items: start;
+}
+.movie-list-image {
+  width: 80px;
+  border-radius: 5px;
+}
+.movie-list-info {
+  grid-column: span 2;
+  .movie-list-title {
+    padding: 0;
+    margin: 0;
+  }
+}
+.movie-list-add {
+  grid-auto-rows: minmax(40px, 40px);
+  width: 40%;
+  align-self: center;
+  justify-self: center;
+}
