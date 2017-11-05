@@ -23,8 +23,24 @@ app.config(['$routeProvider', function($routeProvider){
     })
 }]);
 
+// Directive
+
+app.directive('movieList', () => {
+  return {
+    restrict: 'E',
+    scope: {
+      list: '=',
+      title: '=',
+      livesearch: '='
+    },
+    replace: true,
+    transclude: true,
+    templateUrl: 'views/movie-list.template.html',
+    controller: 'mainController'
+  }
+})
 // Controller
-app.controller('mainController', ['$scope', function($scope){
+app.controller('mainController', ['$scope', '$http', function($scope, $http){
 
   let formatSeasonNum = num =>  ' - ' + 'season ' + num.toString();
 
@@ -37,26 +53,6 @@ app.controller('mainController', ['$scope', function($scope){
     parent.replaceChild(newEl, el);
   }
 
-  $scope.list = [
-    {
-      name: "vikings",
-      season: formatSeasonNum(5),
-      img: 'src/img/vikings5.jpg',
-      date: new Date(2017, 10, 29),
-      rate: 8.5
-    },
-    {
-      name: "mr. robot",
-      season: formatSeasonNum(3),
-      img: 'src/img/mrrobot3.jpg',
-      date: new Date(2017, 9, 1),
-      rate: 8.3
-    },
-    {
-      name: "blade runner 2049",
-      img: 'src/img/bladerunner2049.jpg',
-      date: new Date(2017, 9, 27),
-      rate: 8.4
-    }
-  ]
+  $http.get('data/movies.json').then((response) => $scope.list = response.data)
+
 }])
