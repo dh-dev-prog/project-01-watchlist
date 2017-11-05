@@ -6,13 +6,17 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Lato', sans-serif;
-  background-color: $columbia-blue;
+  font-family: $main-font;
+  background-color: $jungle-green;
 }
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+p, h1, h2, h3, h4, h5 {
+  padding: 0;
+  margin: 0;
 }
 
 // Layout
@@ -22,6 +26,7 @@ ul {
 
 header {
   padding: 10px;
+  text-align: center;
   background-color: $mikado-yellow;
 }
 
@@ -32,16 +37,14 @@ main {
 }
 .movie-list {
   display: grid;
-  grid-auto-rows: 130px;
-  grid-gap: 10px;
+  grid-auto-rows: minmax(130px, auto);
 }
 .movie-list-item {
-  background: silver;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-  padding: 5px;
   align-items: start;
+  padding: 20px 5px;
+  border-top: 1px solid #000;
 }
 .movie-list-image {
   width: 80px;
@@ -52,11 +55,26 @@ main {
   .movie-list-title {
     padding: 0;
     margin: 0;
+    text-transform: capitalize;
   }
 }
 .movie-list-add {
-  grid-auto-rows: minmax(40px, 40px);
-  width: 40%;
+  width: 58px;
+  height: 58px;
+  line-height: 58px;
   align-self: center;
   justify-self: center;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.movie-list-checked {
+  @extend .movie-list-add;
+  cursor: inherit;
+}
+// releaseTime
+
+.releaseTime-title {
+  padding: 5px;
+  margin: 30px 0;
 }

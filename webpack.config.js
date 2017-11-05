@@ -1,6 +1,8 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackCdnPlugin = require('webpack-cdn-plugin');
+
 const extractPlugin = new ExtractTextPlugin({
   filename: 'styles.css'
 })
@@ -12,6 +14,7 @@ module.exports = {
     filename: 'bundle.js',
     // publicPath: '/dist'
   },
+  // devtool: 'inline-source-map',
   module: {
     rules: [
       {
