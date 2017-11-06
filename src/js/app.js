@@ -1,11 +1,12 @@
 import '../css/styles.scss';
 import angular from 'angular';
 import ngRoute from 'angular-route';
+import ngAnimate from 'angular-animate';
 
-const app = angular.module('app', ['ngRoute']);
+const app = angular.module('app', ['ngRoute', 'ngAnimate']);
 
 // Routes
-app.config(['$routeProvider', function($routeProvider){
+app.config(['$routeProvider', ($routeProvider) => {
 
   $routeProvider
     .when('/home', {
@@ -40,7 +41,7 @@ app.directive('movieList', () => {
   }
 })
 // Controller
-app.controller('mainController', ['$scope', '$http', function($scope, $http){
+app.controller('mainController', ['$scope', '$http', ($scope, $http) => {
 
   let formatSeasonNum = num =>  ' - ' + 'season ' + num.toString();
 
