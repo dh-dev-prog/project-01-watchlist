@@ -8,13 +8,13 @@ const extractPlugin = new ExtractTextPlugin({
 })
 
 module.exports = {
-  entry: './src/js/app.js',
+  entry: './src/js/app.module.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
     // publicPath: '/dist'
   },
-  // devtool: 'inline-source-map',
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -51,14 +51,31 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
+          }
+        ],
+        exclude: path.resolve(__dirname, './src/index.html')
       }
     ]
   },
   plugins: [
     extractPlugin,
     new HtmlWebpackPlugin({
+      filename: 'index.html',
       template: './src/index.html',
       inject: 'head'
     })
+    // new HtmlWebpackPlugin({
+    //   filename: 'movie-list.template.html',
+    //   template: './src/js/movie-list/movie-list.template.html'
+    // })
   ]
 }
