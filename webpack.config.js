@@ -8,7 +8,7 @@ const extractPlugin = new ExtractTextPlugin({
 })
 
 module.exports = {
-  entry: './src/js/app.module.js',
+  entry: './src/app.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -40,6 +40,18 @@ module.exports = {
         use: ['html-loader']
       },
       {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
+          }
+        ],
+        exclude: path.resolve(__dirname, './src/index.html')
+      },
+      {
         test: /\.(png|jpg|jpeg)$/,
         use: [
           {
@@ -51,18 +63,6 @@ module.exports = {
             }
           }
         ]
-      },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]'
-            }
-          }
-        ],
-        exclude: path.resolve(__dirname, './src/index.html')
       }
     ]
   },
