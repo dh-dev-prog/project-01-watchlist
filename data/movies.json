@@ -1,18 +1,18 @@
 [{
 	"name": "vikings",
 	"season": " - season 5",
-	"img": "src/img/vikings5.jpg",
+	"img": "src/toolbox/img/vikings5.jpg",
 	"date": "2017-11-28T15:00:00.000Z",
 	"rate": 8.5
 }, {
 	"name": "mr. robot",
 	"season": " - season 3",
-	"img": "src/img/mrrobot3.jpg",
+	"img": "src/toolbox/img/mrrobot3.jpg",
 	"date": "2017-09-30T15:00:00.000Z",
 	"rate": 8.3
 }, {
 	"name": "blade runner 2049",
-	"img": "src/img/bladerunner2049.jpg",
+	"img": "src/toolbox/img/bladerunner2049.jpg",
 	"date": "2017-10-26T15:00:00.000Z",
 	"rate": 8.4
 }]

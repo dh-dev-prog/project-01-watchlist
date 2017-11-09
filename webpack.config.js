@@ -8,7 +8,7 @@ const extractPlugin = new ExtractTextPlugin({
 })
 
 module.exports = {
-  entry: './src/app.js',
+  entry: './src/app.loader.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -73,9 +73,5 @@ module.exports = {
       template: './src/index.html',
       inject: 'head'
     })
-    // new HtmlWebpackPlugin({
-    //   filename: 'movie-list.template.html',
-    //   template: './src/js/movie-list/movie-list.template.html'
-    // })
   ]
 }
