@@ -3,6 +3,6 @@
 const app = angular.module('app', [
   'ngRoute',
   'ngAnimate',
-  'mainComponent',
+  'appRoot',
   'movieList'
 ]);

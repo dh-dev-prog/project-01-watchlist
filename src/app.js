@@ -9,10 +9,10 @@ import './app.module';
 import './app.config';
 
 //Load main component
-import './main-component/main-component.module';
-import './main-component/main-component.component.js';
-// import './main-component/main-component.component.spec';
-import './main-component/main-component.template.html';
+import './app-root/app-root.module';
+import './app-root/app-root.component.js';
+// import './app-root/app-root.component.spec';
+import './app-root/app-root.template.html';
 
 //Load the header
 // import './header/header.module';
