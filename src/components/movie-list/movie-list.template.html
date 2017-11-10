@@ -1,15 +1,15 @@
 
 <section class="movie-list-wrapper">
   <div class="orderButtons">
-    <button ng-click="order = 'name'">By name</button>
-    <button ng-click="order = 'date'">By date</button>
+    <button ng-click="$ctrl.order = 'name'">By name</button>
+    <button ng-click="$ctrl.order = 'date'">By date</button>
   </div>
   <p>{{$ctrl.root.livesearch}}</p>
   <section class="releaseTime">
     <h2 class="releaseTime-title">New Releases</h2>
     <ul class="movie-list">
 
-      <li class="movie-list-item" ng-repeat="movie in $ctrl.list | filter: {name:$ctrl.root.livesearch} | orderBy: order">
+      <li class="movie-list-item" ng-repeat="movie in $ctrl.list | filter: {name:$ctrl.root.livesearch} | orderBy: $ctrl.order">
         <img class="movie-list-image" ng-src={{movie.img}} alt="{{movie.name}} poster">
         <div class="movie-list-info">
           <h4 class="movie-list-title">{{movie.name}}<span ng-show="movie.season">{{movie.season}}</span></h4>
