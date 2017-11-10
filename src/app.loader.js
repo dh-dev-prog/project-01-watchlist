@@ -4,7 +4,6 @@ import './toolbox/css/styles.scss';
 import angular from 'angular';
 import ngRoute from 'angular-route';
 import ngAnimate from 'angular-animate';
-import ngMocks from 'angular-mocks';
 
 //Load App module
 import './app.module';

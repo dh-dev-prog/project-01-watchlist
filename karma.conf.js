@@ -12,7 +12,6 @@ module.exports = function(config) {
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine'],
 
-
     // list of files / patterns to load in the browser
     files: [
       './tests.webpack.js'
@@ -31,7 +30,15 @@ module.exports = function(config) {
       './tests.webpack.js': ['webpack', 'sourcemap']
     },
     webpack: require('./webpack.config'),
-
+    // Configure code coverage reporter
+    // Configure code coverage reporter
+    coverageReporter: {
+      dir: 'coverage/',
+      reporters: [
+        {type: 'text-summary'},
+        {type: 'html'}
+      ]
+    },
     // Hide webpack build information from output
     webpackMiddleware: {
       noInfo: 'errors-only'
@@ -41,7 +48,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress',  'coverage'],
+    reporters: ['progress',  'coverage', 'verbose'],
 
 
     // web server port
