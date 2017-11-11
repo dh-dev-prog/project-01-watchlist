@@ -10,7 +10,7 @@ angular.
     templateUrl:'movie-list.template.html', // Webpack - loaded with file-loader so path is not relative to index.html
     controller: function MovieListController($http) {
         const self = this;
-        let formatSeasonNum = num =>  ' - ' + 'season ' + num.toString();
+        // self.formatSeasonNum = num =>  ' - ' + 'season ' + num.toString();
         self.addToWatchlist = ($event) => {
           let el = $event.target;
           let parent = el.parentNode;
