@@ -19,7 +19,7 @@ angular.
           newEl.innerHTML = '&#10003;';
           parent.replaceChild(newEl, el);
         }
-        $http.get('data/movies.json').then((response) => self.list = response.data);
+        $http.get('../../database/data/movies.json').then((response) => self.list = response.data);
 
         this.order = 'date';
     }

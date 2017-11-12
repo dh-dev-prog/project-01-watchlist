@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test:db": "jasmine-node --autotest --color --verbose database/spec/savingdb.spec.js",
+    "test:db": "jasmine-node --autotest --color --verbose database/spec/**.spec.js",
     "build": "webpack-dev-server",
     "build:prod": "webpack -p"
   },
