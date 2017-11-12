@@ -9,7 +9,7 @@ describe('saving movies', () => {
 
   it('should saves a movie to the database', (done) => {
     let movie = new Movie({
-      name: 'Thor: Ragnarok'
+      name: 'Blade Runner'
     });
 
     movie.save().then(()=>{
