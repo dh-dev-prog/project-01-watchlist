@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackCdnPlugin = require('webpack-cdn-plugin');
@@ -72,6 +73,7 @@ module.exports = {
       filename: 'index.html',
       template: './src/index.html',
       inject: 'head'
-    })
+    }),
+    // new webpack.DefinePlugin({ 'typeof window': JSON.stringify("object")  })
   ]
 }

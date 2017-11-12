@@ -14,7 +14,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      './tests.webpack.js'
+      'tests.webpack.js'
     ],
 
 
@@ -27,18 +27,10 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       // add webpack as preprocessor
-      './tests.webpack.js': ['webpack', 'sourcemap']
+      'tests.webpack.js': ['webpack', 'sourcemap']
     },
     webpack: require('./webpack.config'),
-    // Configure code coverage reporter
-    // Configure code coverage reporter
-    coverageReporter: {
-      dir: 'coverage/',
-      reporters: [
-        {type: 'text-summary'},
-        {type: 'html'}
-      ]
-    },
+
     // Hide webpack build information from output
     webpackMiddleware: {
       noInfo: 'errors-only'
@@ -48,7 +40,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress',  'coverage', 'verbose'],
+    reporters: ['progress', 'verbose'],
 
 
     // web server port
