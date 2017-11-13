@@ -4,13 +4,22 @@ const Schema = mongoose.Schema;
 // Create Schema and Model
 
 const MovieSchema = new Schema({
-  name: String,
+  name: {
+    type: String,
+    required: [true, 'name is required']
+  },
   season: String,
   img: String,
   date: Date,
   rate: Number,
-  watched: Boolean,
-  wished: Boolean
+  watched: {
+    type: Boolean,
+    default: false
+  },
+  wished: {
+    type: Boolean,
+    default: false
+  }
 });
 
 const Movie = mongoose.model('movies', MovieSchema);

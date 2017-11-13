@@ -14,12 +14,25 @@ angular.
         self.addToWatchlist = ($event) => {
           let el = $event.target;
           let parent = el.parentNode;
+          let id = parent.dataset.id;
+          console.log(id);
           let newEl = document.createElement('div');
           newEl.setAttribute('class', 'movie-list-checked');
           newEl.innerHTML = '&#10003;';
           parent.replaceChild(newEl, el);
+          $http.put('api/home/' + id, {wished: true}).then((response) => {
+            console.log(response.data);
+          }).then(()=> {
+            $http.get('api/home/?watched=false&wished=false').then((response) => {
+              self.list = response.data;
+              console.log(self.list);
+            });
+          });
         }
-        $http.get('../../database/data/movies.json').then((response) => self.list = response.data);
+        $http.get('api/home/?watched=false&wished=false').then((response) => {
+          self.list = response.data;
+          console.log(self.list);
+        });
 
         this.order = 'date';
     }
