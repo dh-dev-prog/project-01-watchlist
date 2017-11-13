@@ -1,0 +1,73 @@
+@import url(https://fonts.googleapis.com/css?family=Lato|Oswald);body {
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  background-color: #2d9b83; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+p, h1, h2, h3, h4, h5 {
+  padding: 0;
+  margin: 0; }
+
+header {
+  padding: 10px;
+  text-align: center;
+  background-color: #ffc307; }
+
+main {
+  padding: 10px; }
+
+.movie-list-wrapper {
+  padding: 20px; }
+
+.movie-list {
+  display: grid;
+  grid-auto-rows: minmax(130px, auto); }
+
+.movie-list-item {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
+  padding: 20px 5px;
+  border-top: 1px solid #000; }
+
+.movie-list-image {
+  width: 80px;
+  border-radius: 5px; }
+
+.movie-list-info {
+  grid-column: span 2; }
+  .movie-list-info .movie-list-title {
+    padding: 0;
+    margin: 0;
+    text-transform: capitalize; }
+
+.movie-list-add, .movie-list-checked {
+  width: 58px;
+  height: 58px;
+  line-height: 58px;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer; }
+
+.movie-list-checked {
+  cursor: inherit; }
+
+.releaseTime-title {
+  padding: 5px;
+  margin: 30px 0; }
+
+main.ng-enter {
+  transition: 0.5s linear all;
+  opacity: 0; }
+
+main.ng-enter.ng-enter-active {
+  opacity: 1; }
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdHlsZXMuY3NzIiwic291cmNlUm9vdCI6IiJ9*/

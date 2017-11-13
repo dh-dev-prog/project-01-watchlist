@@ -5,7 +5,7 @@
   "scripts": {
     "test:db": "jasmine-node --autotest --color --verbose database/spec/**.spec.js",
     "build": "webpack-dev-server",
-    "build:prod": "webpack -p"
+    "build:prod": "webpack"
   },
   "license": "MIT",
   "devDependencies": {
@@ -13,6 +13,8 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
+    "body-parser": "^1.18.2",
+    "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
@@ -42,6 +44,7 @@
     "angular": "^1.6.6",
     "angular-animate": "^1.6.6",
     "angular-route": "^1.6.6",
+    "express": "^4.16.2",
     "font-awesome": "^4.7.0",
     "mongoose": "^4.13.1"
   }

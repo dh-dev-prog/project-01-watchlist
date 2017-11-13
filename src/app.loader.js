@@ -1,9 +1,15 @@
 'use strict';
 
 import './toolbox/css/styles.scss';
+
+//img - need to require all images recursivly
+var requireTest = require.context('./toolbox/img', true, /\.jpg$/);
+requireTest.keys().forEach(requireTest);
+
 import angular from 'angular';
 import ngRoute from 'angular-route';
 import ngAnimate from 'angular-animate';
+
 
 //Load App module
 import './app.module';
