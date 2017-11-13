@@ -1,0 +1,25 @@
+
+<section class="movie-list-wrapper">
+  <select ng-model="$ctrl.order">
+    <option name="name">name</option>
+    <option name="date">date</option>
+  </select>
+  <section class="releaseTime">
+    <h2 class="releaseTime-title">New Releases</h2>
+    <ul class="movie-list">
+
+      <li class="movie-list-item" ng-repeat="movie in $ctrl.list | filter: {name:$ctrl.root.livesearch} | orderBy: $ctrl.order">
+        <img class="movie-list-image" ng-src={{movie.img}} alt="{{movie.name}} poster">
+        <div class="movie-list-info">
+          <h4 class="movie-list-title">{{movie.name}}<span>{{movie.season}}</span></h4>
+          <p>release date: {{movie.date | date : "dd MMM. yyyy"}}</p>
+        </div>
+        <button ng-click="$ctrl.addToWatchlist($event)" class="movie-list-add" type="button">Add</button>
+      </li>
+    </ul>
+  </section>
+
+  <section class="releaseTime">
+    <h2 class="releaseTime-title">This Year</h2>
+  </section>
+</section>

@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackCdnPlugin = require('webpack-cdn-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const extractPlugin = new ExtractTextPlugin({
   filename: 'styles.css'
@@ -13,7 +14,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    // publicPath: '/dist'
+    publicPath: '/dist'
   },
   devtool: 'inline-source-map',
   module: {
@@ -53,7 +54,7 @@ module.exports = {
         exclude: path.resolve(__dirname, './src/index.html')
       },
       {
-        test: /\.(png|jpg|jpeg)$/,
+        test: /\.jpg$/,
         use: [
           {
             loader: 'file-loader',
@@ -68,6 +69,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(['dist']),
     extractPlugin,
     new HtmlWebpackPlugin({
       filename: 'index.html',
