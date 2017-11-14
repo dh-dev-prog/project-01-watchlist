@@ -4,7 +4,7 @@ exports.config = {
   framework: 'jasmine',
   seleniumAddress: 'http://localhost:4444/wd/hub',
   specs: ['scenarios.js'],
-  baseUrl: 'http://localhost:8080/', //Need to run 'index.html'
+  baseUrl: 'http://localhost:4000/home', //Need to run 'index.html'
   onPrepare: function () {
     jasmine.getEnv().addReporter(new SpecReporter({
       spec: {

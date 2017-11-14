@@ -4,7 +4,7 @@ const Movie = require('../models/movies');
 
 // get a list of new movies
 router.get('/home', function(req,res, next){
-  Movie.find({watched: req.query.watched, wished: req.query.wished}).then((movies) => res.send(movies));
+  Movie.find({watched: req.query.watched}).then((movies) => res.send(movies));
 });
 
 // put a movie in the watchlist

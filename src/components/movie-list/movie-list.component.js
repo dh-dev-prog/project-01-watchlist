@@ -10,29 +10,17 @@ angular.
     templateUrl:'movie-list.template.html', // Webpack - loaded with file-loader so path is not relative to index.html
     controller: function MovieListController($http) {
         const self = this;
-        // self.formatSeasonNum = num =>  ' - ' + 'season ' + num.toString();
-        self.addToWatchlist = ($event) => {
-          let el = $event.target;
-          let parent = el.parentNode;
-          let id = parent.dataset.id;
-          console.log(id);
-          let newEl = document.createElement('div');
-          newEl.setAttribute('class', 'movie-list-checked');
-          newEl.innerHTML = '&#10003;';
-          parent.replaceChild(newEl, el);
-          $http.put('api/home/' + id, {wished: true}).then((response) => {
+
+        self.addToWatchlist = (movie) => {
+          movie.wished = true;
+          $http.put('api/home/' + movie._id, {wished: true}).then((response) => {
             console.log(response.data);
-          }).then(()=> {
-            $http.get('api/home/?watched=false&wished=false').then((response) => {
-              self.list = response.data;
-              console.log(self.list);
-            });
-          });
+          })
         }
-        $http.get('api/home/?watched=false&wished=false').then((response) => {
+        $http.get('api/home/?watched=false').then((response) => {
           self.list = response.data;
-          console.log(self.list);
         });
+
 
         this.order = 'date';
     }
