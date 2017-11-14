@@ -13,8 +13,11 @@
         <div class="movie-list-info">
           <h4 class="movie-list-title">{{movie.name}}<span>{{movie.season}}</span></h4>
           <p>release date: {{movie.date | date : "dd MMM. yyyy"}}</p>
+          <p>{{movie.wished}}</p>
         </div>
-        <button ng-click="$ctrl.addToWatchlist($event)" class="movie-list-add" type="button">Add</button>
+        <button ng-click="$ctrl.addToWatchlist(movie)" ng-show="!movie.wished" class="movie-list-add" type="button">Add</button>
+        <div ng-show="movie.wished" class="movie-list-checked" type="button">&#10003;</div>
+
       </li>
     </ul>
   </section>

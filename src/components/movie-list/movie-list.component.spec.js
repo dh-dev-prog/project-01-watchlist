@@ -13,7 +13,7 @@
         // as the service while avoiding a name conflict.
         $httpBackend = _$httpBackend_;
         $httpBackend
-          .expectGET('data/movies.json')
+          .expectGET('api/home/?watched=false')
           .respond([{name: 'vikings'}, {name: 'mr. robot'}, {name: 'blade runner 2049'}]);
 
         ctrl = $componentController('movieList');
