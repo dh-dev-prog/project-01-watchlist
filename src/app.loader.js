@@ -29,3 +29,8 @@ import './components/movie-list/movie-list.module';
 import './components/movie-list/movie-list.component';
 // import './components/movie-list/movie-list.component.spec';
 import './components/movie-list/movie-list.template.html'; // Webpack - Add 'file-loader' set on '.html$' files to load template
+
+// Load Movie-list
+import './components/watchlist/watchlist.module';
+import './components/watchlist/watchlist.component';
+import './components/watchlist/watchlist.template.html'; // Webpack - Add 'file-loader' set on '.html$' files to load template

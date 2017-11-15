@@ -13,11 +13,11 @@ angular.
 
         self.addToWatchlist = (movie) => {
           movie.wished = true;
-          $http.put('api/home/' + movie._id, {wished: true}).then((response) => {
-            console.log(response.data);
-          })
+          $http
+            .put('api/home/' + movie._id, {wished: true})
+            .then((response) => {console.log(response.data)})
         }
-        $http.get('api/home/?watched=false').then((response) => {
+        $http.get('api/home/').then((response) => {
           self.list = response.data;
         });
 

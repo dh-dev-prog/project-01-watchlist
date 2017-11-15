@@ -10,10 +10,10 @@ angular.
         template: '<movie-list></movie-list>'
       })
       .when('/watchlist', {
-        templateUrl: 'views/watchlist.html'
+        template: '<watchlist></watchlist>'
       })
       .when('/watched', {
-        templateUrl: 'views/watched.html'
+        template: 'views/watched.html'
       })
       .otherwise({
         redirectTo: '/home'
