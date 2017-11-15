@@ -5,7 +5,7 @@
     <option name="date">date</option>
   </select>
   <section class="releaseTime">
-    <h2 class="releaseTime-title">New Releases</h2>
+    <h2 class="releaseTime-title">Watchlist</h2>
     <ul class="movie-list">
 
       <li class="movie-list-item" ng-repeat="movie in $ctrl.list | filter: {name:$ctrl.root.livesearch} | orderBy: $ctrl.order" data-id={{movie._id}}>
@@ -13,16 +13,13 @@
         <div class="movie-list-info">
           <h4 class="movie-list-title">{{movie.name}}<span>{{movie.season}}</span></h4>
           <p>release date: {{movie.date | date : "dd MMM. yyyy"}}</p>
-          <p>wished:{{movie.wished}} + watched:{{movie.watched}}</p>
+          <p>wished:{{movie.wished}}, watched:{{movie.watched}}</p>
         </div>
-        <button ng-click="$ctrl.addToWatchlist(movie)" ng-show="!movie.wished && !movie.watched" class="movie-list-add" type="button">Add</button>
-        <div ng-show="movie.wished && !movie.watched" class="movie-list-checked" type="button">&#10003;</div>
-        <div ng-show="movie.watched" class="movie-list-checked">watched</div>
+        <button ng-click="$ctrl.storeInWatched(movie)" ng-show="!movie.watched" class="movie-list-add" type="button">Watched</button>
+        <div ng-show="movie.watched" class="movie-list-checked" type="button">watched</div>
+
       </li>
     </ul>
   </section>
 
-  <section class="releaseTime">
-    <h2 class="releaseTime-title">Previously</h2>
-  </section>
 </section>
