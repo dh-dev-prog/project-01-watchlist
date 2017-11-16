@@ -5,5 +5,6 @@ const app = angular.module('app', [
   'ngAnimate',
   'appRoot',
   'movieList',
-  'watchlist'
+  'watchlist',
+  'watched'
 ]);

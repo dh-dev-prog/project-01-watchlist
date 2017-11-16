@@ -1,0 +1,27 @@
+
+<section class="movie-list-wrapper">
+  <select ng-model="$ctrl.order">
+    <option name="name">name</option>
+    <option name="date">date</option>
+  </select>
+  <section class="releaseTime">
+    <h2 class="releaseTime-title">Watchlist</h2>
+    <ul class="movie-list">
+
+      <li class="movie-list-item" ng-repeat="movie in $ctrl.list | filter: {name:$ctrl.root.livesearch} | orderBy: $ctrl.order" data-id={{movie._id}}>
+        <img class="movie-list-image" ng-src={{movie.img}} alt="{{movie.name}} poster">
+        <div class="movie-list-info">
+          <h4 class="movie-list-title">{{movie.name}}<span>{{movie.season}}</span></h4>
+          <p>release date: {{movie.date | date : "dd MMM. yyyy"}}</p>
+          <p>wished:{{movie.wished}}, watched:{{movie.watched}}</p>
+        </div>
+        <div>
+          <div ng-show="movie.watched" class="movie-list-checked" type="button">watched</div>
+          <button ng-click="$ctrl.undo(movie)" ng-show="movie.watched" class="movie-list-undo" type="button">undo</button>
+        </div>
+
+      </li>
+    </ul>
+  </section>
+
+</section>

@@ -13,7 +13,7 @@ angular.
         template: '<watchlist></watchlist>'
       })
       .when('/watched', {
-        template: 'views/watched.html'
+        template: '<watched></watched>'
       })
       .otherwise({
         redirectTo: '/home'
